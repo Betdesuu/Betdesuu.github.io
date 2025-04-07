@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --bulma-primary-h: 102deg;
+    --bulma-primary-l: 34%;
+    --bulma-info-h: 217deg;
+    --bulma-info-s: 40%;
+    --bulma-info-l: 15%;
+    --bulma-success-h: 339deg;
+    --bulma-success-s: 80%;
+    --bulma-danger-l: 56%;
+    --bulma-body-background-color: hsl(0, 0%, 98%);
+}
+  
+#stepBar{
+    padding-top: 5%;
+}
+.container{
+    padding-top: 2%;
+    margin: auto;
+}  
+.map{
+    margin: auto;
+    max-width: 500px;
+    max-height:500px;
+    border: solid 3px #23d160;
+}
+
+#countries{
+    text-align: center;
+    font-size: large;
+}
+
+#scoreimg{
+    max-width: 50px;
+    
+}
+.score{
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    padding: 0;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.joker img{
+    width: 100px;
+    cursor: pointer;
+    border: solid #23d160 4px;
+    border-radius: 50%;
+
+}
