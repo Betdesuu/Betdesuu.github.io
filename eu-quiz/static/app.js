@@ -1,3 +1,6 @@
+let totalScore=0;
+let questionScore=25;
+
 startgame();
 function startgame(){
  fetch('./src/eu.json')
@@ -8,6 +11,7 @@ function startgame(){
     console.log(randomCountry);
     dom(randomCountry.id);
     hint(randomCountry);
+    checkAnswer(randomCountry);
 
  })
  .catch(error => console.error("Error fetching JSON!", error));
@@ -26,17 +30,43 @@ function hint(randomCountry) {
 
 
   flag.addEventListener("click", () => {
-    let newflag = randomCountry.flag;
-    flag.src = newflag;
+    if(questionScore>10){
+      questionScore-=10;
+      document.getElementById("questionscore").innerText = `${questionScore}p`;
+      let newflag = randomCountry.flag;
+      flag.src = newflag;
+    }
+    else{
+       Swal.fire("Upsie! You need more than 10 points to unlock this hint!");
+    }
   });
 
   capital.addEventListener("click", () => {
-    Swal.fire("Capital: " + randomCountry.capital);
+    if(questionScore>5){
+      questionScore-=5;
+      document.getElementById("questionscore").innerText = `${questionScore}p`;
+      Swal.fire("Capital: " + randomCountry.capital);
+      
+    }
+    else{
+     Swal.fire("Upsie! You need more than 5 points to unlock this hint!");
+    }
   })
 
   currency.addEventListener("click", () => {
-    Swal.fire("Currency: " + randomCountry.currency);
+    if(questionScore>5){
+      questionScore-=5;
+      document.getElementById("questionscore").innerText = `${questionScore}p`;
+      Swal.fire("Currency: " + randomCountry.currency);
+    }
+    else{
+      Swal.fire("Upsie! You need more than 5 points to unlock this hint!");
+    }
   })
+
+}
+
+function checkAnswer(randomCountry){
 
 }
 
