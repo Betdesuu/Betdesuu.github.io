@@ -30,7 +30,7 @@
     border: solid 3px #23d160;
 }
 
-#countries{
+#searchInput{
     text-align: center;
     font-size: large;
 }
@@ -55,4 +55,23 @@
     border: solid #23d160 4px;
     border-radius: 50%;
 
+}
+
+
+.result-item{
+    text-align: center;
+    color: black;
+    font-size: larger;
+    font-weight: 200;
+    border: solid rgb(85, 85, 85) 1px;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+.result-item strong{
+    color: black;
+}
+
+#results{
+    cursor: pointer;
 }
