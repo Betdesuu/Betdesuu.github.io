@@ -1,10 +1,14 @@
 let totalScore = 0;
-let questionScore = 25;
 let countries = [];
 let correctCountry = null;
+let questionScore = 25;
+let counter=3;
+let previousCountryId = null;
 
 startgame();
 function startgame() {
+  questionScore = 25; // Question score sıfırlanıyor
+  document.getElementById("questionscore").innerText = `${questionScore}p`;
   fetch('./src/eu.json')
     .then(Response => Response.json())
     .then(data => {
@@ -14,31 +18,63 @@ function startgame() {
       correctCountry = randomCountry;
       console.log(randomCountry);
       dom(randomCountry.id);
-      hint(randomCountry);
-      checkAnswer(randomCountry);
+      resetHintListeners(); // Eski event listener'ları kaldır
+      hint(randomCountry); // Yeni event listener'ları ekle
+      const flag = document.getElementById("flagicon");
+      flag.src = "./img/flag.svg";
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+      document.getElementById("searchInput").value = "";
 
     })
     .catch(error => console.error("Error fetching JSON!", error));
 }
 
+function resetHintListeners() {
+  const flag = document.getElementById("flagicon");
+  const currency = document.getElementById("currency");
+  const capital = document.getElementById("capital");
+
+  // Eski event listener'ları kaldır
+  const newFlag = flag.cloneNode(true);
+  const newCurrency = currency.cloneNode(true);
+  const newCapital = capital.cloneNode(true);
+
+  flag.parentNode.replaceChild(newFlag, flag);
+  currency.parentNode.replaceChild(newCurrency, currency);
+  capital.parentNode.replaceChild(newCapital, capital);
+}
+
 function dom(id) {
+  // Reset the previous country's color
+  if (previousCountryId) {
+    const previousPath = document.getElementById(previousCountryId);
+    if (previousPath) {
+      previousPath.setAttribute("fill", "#ececec"); // Reset to default color (e.g., gray)
+    }
+  }
   const path = document.getElementById(id);
   // Fill özelliğini ekle (veya değiştir)
   path.setAttribute("fill", "#ffcc00"); // örnek olarak sarı renk
+
+  // Update the previous country ID
+  previousCountryId = id;
 }
 
 function hint(randomCountry) {
   const flag = document.getElementById("flagicon");
   const currency = document.getElementById("currency");
   const capital = document.getElementById("capital");
-
-
+  
   flag.addEventListener("click", () => {
+
     if (questionScore > 10) {
+      console.log(questionScore)
       questionScore -= 10;
       document.getElementById("questionscore").innerText = `${questionScore}p`;
       let newflag = randomCountry.flag;
       flag.src = newflag;
+    
     }
     else {
       Swal.fire("Upsie! You need more than 10 points to unlock this hint!");
@@ -109,14 +145,14 @@ function displayResults(list) {
 function checkAnswer(selectedCountry, correctCountry) {
   if (selectedCountry.country === correctCountry.country) {
     let previousScore = totalScore;
-    totalScore += 25;
+    totalScore += questionScore;
 
     let currentDisplayScore = previousScore;
     const animationSpeed = 50; // ms
     const increment = 1;
 
     Swal.fire({
-      title: "That's True",
+      title: "Correct answer",
       icon: "success",
       html: `Total Score: <b id="scoreCounter">${previousScore}</b> points ⭐`,
       timer: 3000,
@@ -138,13 +174,17 @@ function checkAnswer(selectedCountry, correctCountry) {
         
       }
     }).then((result) => {
+      counter--;
       if (result.dismiss === Swal.DismissReason.timer) {
         console.log("I was closed by the timer");
+      }
+      if(counter>0){
+        startgame();
       }
     });
 
   } else {
-    Swal.fire("❌ Yanlış cevap! Tekrar dene.");
+    Swal.fire("❌ Wrong answer. Give it another shot!");
   }
 }
 
