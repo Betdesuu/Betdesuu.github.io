@@ -2,7 +2,7 @@ let totalScore = 0;
 let countries = [];
 let correctCountry = null;
 let questionScore = 25;
-let counter=3;
+let counter=5;
 let previousCountryId = null;
 
 startgame();
@@ -180,6 +180,9 @@ function checkAnswer(selectedCountry, correctCountry) {
       }
       if(counter>0){
         startgame();
+      }
+      else if(counter == 0){
+        Swal.fire("Game Ended! <br> Your total score is:" + totalScore);
       }
     });
 
