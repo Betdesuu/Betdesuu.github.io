@@ -2,7 +2,7 @@ let totalScore = 0;
 let countries = [];
 let correctCountry = null;
 let questionScore = 25;
-let counter=5;
+let counter=3;
 let previousCountryId = null;
 
 startgame();
@@ -46,13 +46,6 @@ function resetHintListeners() {
 }
 
 function dom(id) {
-  // Reset the previous country's color
-  if (previousCountryId) {
-    const previousPath = document.getElementById(previousCountryId);
-    if (previousPath) {
-      previousPath.setAttribute("fill", "#ececec"); // Reset to default color (e.g., gray)
-    }
-  }
   const path = document.getElementById(id);
   // Fill özelliğini ekle (veya değiştir)
   path.setAttribute("fill", "#ffcc00"); // örnek olarak sarı renk
@@ -144,6 +137,13 @@ function displayResults(list) {
 
 function checkAnswer(selectedCountry, correctCountry) {
   if (selectedCountry.country === correctCountry.country) {
+  // Reset the previous country's color
+    if (previousCountryId) {
+      const previousPath = document.getElementById(previousCountryId);
+      if (previousPath) {
+        previousPath.setAttribute("fill", "#23d160"); // Reset to default color (e.g., gray)
+      }
+    }
     let previousScore = totalScore;
     totalScore += questionScore;
 
@@ -187,7 +187,20 @@ function checkAnswer(selectedCountry, correctCountry) {
     });
 
   } else {
-    Swal.fire("❌ Wrong answer. Give it another shot!");
+    // Reset the previous country's color
+    if (previousCountryId) {
+      const previousPath = document.getElementById(previousCountryId);
+      if (previousPath) {
+        previousPath.setAttribute("fill", "#D2042D"); // Reset to default color (e.g., gray)
+      }
+    counter--;
+    Swal.fire("❌ Wrong answer. <br> Correct Answer is:" + correctCountry.country);
+    if(counter>0){
+      startgame();
+    }
+    else if(counter == 0){
+      Swal.fire("Game Ended! <br> Your total score is:" + totalScore);
+    }
   }
 }
-
+}
