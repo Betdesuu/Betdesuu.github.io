@@ -30,7 +30,7 @@
     border: solid 3px #23d160;
 }
 
-#countries{
+#searchInput{
     text-align: center;
     font-size: large;
 }
@@ -55,4 +55,91 @@
     border: solid #23d160 4px;
     border-radius: 50%;
 
+}
+
+
+.result-item{
+    text-align: center;
+    color: black;
+    font-size: larger;
+    font-weight: 200;
+    border: solid rgb(85, 85, 85) 1px;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+.result-item strong{
+    color: black;
+}
+
+#results{
+    cursor: pointer;
+}
+
+#questionscore{
+    display: inline-flex;
+}
+
+#totalIcon{
+    display: inline-flex;
+    font-weight: 100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    width: 75px;
+    
+}
+#logo{
+    margin: auto;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 2%;
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    border: #23d160 solid 2px;
+    border-radius: 15px;
+    margin-top: 5%;
+}
+.card h5{
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.card input{
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+}
+.section img{
+    border: solid 2px #23d160;
+    border-radius: 50%;
+}
+.section p{
+    text-align: center;
+}
+
+#high-score{
+    width: 100px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    
+}
+
+@media screen and (max-width: 768px) {
+    #totalScore {
+        white-space: nowrap;
+        padding-right: 2%;
+      }
+
+      #scoreimg, #totalIcon {
+        width: 30px;
+        height: 30px;
+      }
+       
+      
 }
