@@ -2,8 +2,9 @@ let totalScore = 0;
 let countries = [];
 let correctCountry = null;
 let questionScore = 20;
-let counter=1;
+let counter = 1;
 let previousCountryId = null;
+let askedCountries = []; // Daha önce sorulan ülkelerin ID'lerini tutacak dizi
 
 startgame();
 function startgame() {
@@ -13,8 +14,16 @@ function startgame() {
     .then(Response => Response.json())
     .then(data => {
       countries = data;
-      let index = Math.floor(Math.random() * data.length);
-      let randomCountry = data[index];
+      // Daha önce sorulmamış bir ülke seçmek için döngü
+      let randomCountry;
+      do {
+        let index = Math.floor(Math.random() * data.length);
+        randomCountry = data[index];
+      } while (askedCountries.includes(randomCountry.id));
+
+      // Seçilen ülkenin ID'sini kaydet
+      askedCountries.push(randomCountry.id);
+
       correctCountry = randomCountry;
       console.log(randomCountry);
       dom(randomCountry.id);
@@ -24,8 +33,8 @@ function startgame() {
       flag.src = "./img/flag.svg";
       const resultsDiv = document.getElementById("results");
       resultsDiv.innerHTML = "";
-      let scorediv=document.getElementById("totalScore");
-      scorediv.innerHTML=totalScore+" p";
+      let scorediv = document.getElementById("totalScore");
+      scorediv.innerHTML = totalScore + " p";
       document.getElementById("searchInput").value = "";
 
     })
