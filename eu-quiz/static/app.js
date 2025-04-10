@@ -24,6 +24,8 @@ function startgame() {
       flag.src = "./img/flag.svg";
       const resultsDiv = document.getElementById("results");
       resultsDiv.innerHTML = "";
+      let scorediv=document.getElementById("totalScore");
+      scorediv.innerHTML=totalScore+" p";
       document.getElementById("searchInput").value = "";
 
     })
