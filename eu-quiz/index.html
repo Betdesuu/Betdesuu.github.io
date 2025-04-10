@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/octoshrimpy/bulma-o-steps/master/bulma-steps.css">
     <link rel="stylesheet" href="./static/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="static/app.js"></script>
 
 </head>
 <body>
@@ -142,7 +141,9 @@
     </div>
 
     <div class="container is-max-tablet">
-        <input id="countries" class="input is-primary has-text-black is-rounded has-background-info-light" type="text" placeholder="Rounded input" />
+        <input id="searchInput" class="input is-primary has-text-black is-rounded has-background-info-light" type="text" placeholder="Search County" />
+        <div id="results"></div>
+
     </div>
 
     <div class="container is-max-tablet columns">
@@ -154,4 +155,6 @@
     <script src="https://kit.fontawesome.com/db878e9a9e.js" crossorigin="anonymous"></script>
 
 </body>
+<script src="static/app.js"></script>
+
 </html>
