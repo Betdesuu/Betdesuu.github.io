@@ -16,9 +16,7 @@
     --bulma-body-background-color: hsl(0, 0%, 98%);
 }
   
-#stepBar{
-    padding-top: 5%;
-}
+
 .container{
     padding-top: 2%;
     margin: auto;
@@ -90,7 +88,7 @@
 }
 #logo{
     margin: auto;
-    width: 200px;
+    width: 400px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -123,12 +121,28 @@
 }
 
 #high-score{
-    width: 100px;
+    width: 150px;
     margin: auto;
     justify-content: center;
     display: flex;
     
 }
+
+.my-cancel-button {
+    background-color: #28a745 !important; /* yeşil */
+    color: white !important;
+  }
+  
+  .my-confirm-button {
+    background-color: #ffb10a !important; /* kırmızı */
+    color: white !important;
+  }
+  
+#github{
+    color: #23d160;
+}
+
+
 
 @media screen and (max-width: 768px) {
     #totalScore {
@@ -140,6 +154,4 @@
         width: 30px;
         height: 30px;
       }
-       
-      
 }

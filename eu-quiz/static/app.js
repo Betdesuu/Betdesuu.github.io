@@ -1,20 +1,29 @@
 let totalScore = 0;
 let countries = [];
 let correctCountry = null;
-let questionScore = 25;
-let counter=3;
+let questionScore = 20;
+let counter = 1;
 let previousCountryId = null;
+let askedCountries = []; // Daha önce sorulan ülkelerin ID'lerini tutacak dizi
 
 startgame();
 function startgame() {
-  questionScore = 25; // Question score sıfırlanıyor
+  questionScore = 20; // Question score sıfırlanıyor
   document.getElementById("questionscore").innerText = `${questionScore}p`;
   fetch('./src/eu.json')
     .then(Response => Response.json())
     .then(data => {
       countries = data;
-      let index = Math.floor(Math.random() * data.length);
-      let randomCountry = data[index];
+      // Daha önce sorulmamış bir ülke seçmek için döngü
+      let randomCountry;
+      do {
+        let index = Math.floor(Math.random() * data.length);
+        randomCountry = data[index];
+      } while (askedCountries.includes(randomCountry.id));
+
+      // Seçilen ülkenin ID'sini kaydet
+      askedCountries.push(randomCountry.id);
+
       correctCountry = randomCountry;
       console.log(randomCountry);
       dom(randomCountry.id);
@@ -24,8 +33,6 @@ function startgame() {
       flag.src = "./img/flag.svg";
       const resultsDiv = document.getElementById("results");
       resultsDiv.innerHTML = "";
-      let scorediv=document.getElementById("totalScore");
-      scorediv.innerHTML=totalScore+" p";
       document.getElementById("searchInput").value = "";
 
     })
@@ -60,43 +67,40 @@ function hint(randomCountry) {
   const flag = document.getElementById("flagicon");
   const currency = document.getElementById("currency");
   const capital = document.getElementById("capital");
+  let flagIsclicked =0;
+  let currencyIsclicked =0;
+  let capitalIsclicked =0;
   
   flag.addEventListener("click", () => {
-
-    if (questionScore > 10) {
-      console.log(questionScore)
-      questionScore -= 10;
-      document.getElementById("questionscore").innerText = `${questionScore}p`;
-      let newflag = randomCountry.flag;
-      flag.src = newflag;
     
+    if(flagIsclicked==0){
+      questionScore -= 7;
     }
-    else {
-      Swal.fire("Upsie! You need more than 10 points to unlock this hint!");
-    }
+       console.log(questionScore)
+       document.getElementById("questionscore").innerText = `${questionScore}p`;
+       let newflag = randomCountry.flag;
+       flag.src = newflag;
+       flagIsclicked=1;
   });
 
   capital.addEventListener("click", () => {
-    if (questionScore > 5) {
+    
+    if(capitalIsclicked==0){
       questionScore -= 5;
-      document.getElementById("questionscore").innerText = `${questionScore}p`;
-      Swal.fire("Capital: " + randomCountry.capital);
-
     }
-    else {
-      Swal.fire("Upsie! You need more than 5 points to unlock this hint!");
-    }
+       document.getElementById("questionscore").innerText = `${questionScore}p`;
+       Swal.fire("Capital: " + randomCountry.capital);
+       capitalIsclicked=1;
   })
 
   currency.addEventListener("click", () => {
-    if (questionScore > 5) {
-      questionScore -= 5;
+    
+    if(currencyIsclicked==0){
+      questionScore -= 3;
+    }
       document.getElementById("questionscore").innerText = `${questionScore}p`;
       Swal.fire("Currency: " + randomCountry.currency);
-    }
-    else {
-      Swal.fire("Upsie! You need more than 5 points to unlock this hint!");
-    }
+      currencyIsclicked=1;
   })
 
 }
@@ -132,8 +136,6 @@ function displayResults(list) {
       checkAnswer(country, correctCountry);
     });
     resultsDiv.appendChild(item);
-
-
   });
 }
 
@@ -152,6 +154,8 @@ function checkAnswer(selectedCountry, correctCountry) {
     let currentDisplayScore = previousScore;
     const animationSpeed = 50; // ms
     const increment = 1;
+    let scorediv = document.getElementById("totalScore");
+    scorediv.innerHTML = totalScore + " p";
 
     Swal.fire({
       title: "Correct answer",
@@ -176,15 +180,45 @@ function checkAnswer(selectedCountry, correctCountry) {
         
       }
     }).then((result) => {
-      counter--;
+      counter++;
       if (result.dismiss === Swal.DismissReason.timer) {
         console.log("I was closed by the timer");
       }
-      if(counter>0){
+      if(counter<=5){
         startgame();
       }
-      else if(counter == 0){
-        Swal.fire("Game Ended! <br> Your total score is:" + totalScore);
+      else if(counter >5){
+        Swal.fire({
+          title: "Game Ended!",
+          text: "Your total score is: " + totalScore,
+          imageUrl: "./img/logo.png",
+          imageWidth: 300,
+          imageHeight: 100,
+          imageAlt: "Logo",
+          showCloseButton: true,
+          showCancelButton: true,
+          allowOutsideClick: false,
+          focusConfirm: false,
+          confirmButtonText: `<i class="fa-solid fa-house"></i> Home`,
+          cancelButtonText: `<i class="fa-solid fa-rotate-right"></i> Retry`,
+          confirmButtonAriaLabel: "Go Home",
+          cancelButtonAriaLabel: "Retry Game",
+          customClass: {
+            confirmButton: 'my-confirm-button',
+            cancelButton: 'my-cancel-button'
+          },
+          preConfirm: () => {
+            window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
+          },
+          didOpen: () => {
+            const cancelBtn = document.querySelector('.swal2-cancel');
+            cancelBtn.addEventListener('click', () => {
+              location.reload(); // Retry butonuna tıklanınca sayfayı yenile
+            });
+          }
+        });
+        
+        
       }
     });
 
@@ -195,13 +229,48 @@ function checkAnswer(selectedCountry, correctCountry) {
       if (previousPath) {
         previousPath.setAttribute("fill", "#D2042D"); // Reset to default color (e.g., gray)
       }
-    counter--;
-    Swal.fire("❌ Wrong answer. <br> Correct Answer is:" + correctCountry.country);
-    if(counter>0){
+    counter++;
+    Swal.fire({
+      icon: "error",
+      title: "Wrong answer",
+      text: "Correct Answer is: " + correctCountry.country,
+
+    });
+    if(counter<=5){
       startgame();
     }
-    else if(counter == 0){
-      Swal.fire("Game Ended! <br> Your total score is:" + totalScore);
+    else if(counter >5){
+      Swal.fire({
+        title: "Game Ended!",
+        text: "Your total score is: " + totalScore,
+        imageUrl: "./img/logo.png",
+        imageWidth: 300,
+        imageHeight: 100,
+        imageAlt: "Logo",
+        showCloseButton: true,
+        showCancelButton: true,
+        allowOutsideClick: false,
+        focusConfirm: false,
+        confirmButtonText: `<i class="fa-solid fa-house"></i> Home`,
+        cancelButtonText: `<i class="fa-solid fa-rotate-right"></i> Retry`,
+        confirmButtonAriaLabel: "Go Home",
+        cancelButtonAriaLabel: "Retry Game",
+        customClass: {
+          confirmButton: 'my-confirm-button',
+          cancelButton: 'my-cancel-button'
+        },
+        preConfirm: () => {
+          window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
+        },
+        didOpen: () => {
+          const cancelBtn = document.querySelector('.swal2-cancel');
+          cancelBtn.addEventListener('click', () => {
+            location.reload(); // Retry butonuna tıklanınca sayfayı yenile
+          });
+        }
+      });
+      
+      
     }
   }
 }
