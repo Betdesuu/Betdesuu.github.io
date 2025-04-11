@@ -10,6 +10,12 @@ startgame();
 function startgame() {
   questionScore = 20; // Question score sıfırlanıyor
   document.getElementById("questionscore").innerText = `${questionScore}p`;
+  const allSteps = document.querySelectorAll('.steps-segment');
+  allSteps.forEach(step => {
+  step.classList.remove('is-active');
+  });
+  const stepSegment = document.getElementById(counter);
+  stepSegment.classList.add('is-active');
   fetch('./src/eu.json')
     .then(Response => Response.json())
     .then(data => {
@@ -33,8 +39,6 @@ function startgame() {
       flag.src = "./img/flag.svg";
       const resultsDiv = document.getElementById("results");
       resultsDiv.innerHTML = "";
-      let scorediv = document.getElementById("totalScore");
-      scorediv.innerHTML = totalScore + " p";
       document.getElementById("searchInput").value = "";
 
     })
@@ -142,7 +146,15 @@ function displayResults(list) {
 }
 
 function checkAnswer(selectedCountry, correctCountry) {
+  const currentLi = document.getElementById(counter);
+  const spanInsideLi = currentLi.querySelector('span');
+  const checkicon = document.createElement('i'); // <i> etiketi oluştur
+
   if (selectedCountry.country === correctCountry.country) {
+    checkicon.classList.add('fa-solid', 'fa-check');
+    checkicon.style.color= '#ffffff';
+    spanInsideLi.appendChild(checkicon);
+    
   // Reset the previous country's color
     if (previousCountryId) {
       const previousPath = document.getElementById(previousCountryId);
@@ -156,6 +168,8 @@ function checkAnswer(selectedCountry, correctCountry) {
     let currentDisplayScore = previousScore;
     const animationSpeed = 50; // ms
     const increment = 1;
+    let scorediv = document.getElementById("totalScore");
+    scorediv.innerHTML = totalScore + " p";
 
     Swal.fire({
       title: "Correct answer",
@@ -188,11 +202,42 @@ function checkAnswer(selectedCountry, correctCountry) {
         startgame();
       }
       else if(counter >5){
-        Swal.fire("Game Ended! <br> Your total score is:" + totalScore);
+        Swal.fire({
+          title: "Game Ended!",
+          text: "Your total score is: " + totalScore,
+          imageUrl: "./img/logo.png",
+          imageWidth: 300,
+          imageHeight: 100,
+          imageAlt: "Logo",
+          showCloseButton: true,
+          showCancelButton: true,
+          allowOutsideClick: false,
+          focusConfirm: false,
+          confirmButtonText: `<i class="fa-solid fa-house"></i> Home`,
+          cancelButtonText: `<i class="fa-solid fa-rotate-right"></i> Retry`,
+          confirmButtonAriaLabel: "Go Home",
+          cancelButtonAriaLabel: "Retry Game",
+          customClass: {
+            confirmButton: 'my-confirm-button',
+            cancelButton: 'my-cancel-button'
+          },
+          preConfirm: () => {
+            window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
+          },
+          didOpen: () => {
+            const cancelBtn = document.querySelector('.swal2-cancel');
+            cancelBtn.addEventListener('click', () => {
+              location.reload(); // Retry butonuna tıklanınca sayfayı yenile
+            });
+          }
+        });
       }
     });
 
   } else {
+    checkicon.classList.add('fa-solid', 'fa-xmark');
+    checkicon.style.color= '#ffffff';
+    spanInsideLi.appendChild(checkicon);
     // Reset the previous country's color
     if (previousCountryId) {
       const previousPath = document.getElementById(previousCountryId);
@@ -200,12 +245,47 @@ function checkAnswer(selectedCountry, correctCountry) {
         previousPath.setAttribute("fill", "#D2042D"); // Reset to default color (e.g., gray)
       }
     counter++;
-    Swal.fire("❌ Wrong answer. <br> Correct Answer is:" + correctCountry.country);
+    Swal.fire({
+      icon: "error",
+      title: "Wrong answer",
+      text: "Correct Answer is: " + correctCountry.country,
+
+    });
     if(counter<=5){
       startgame();
     }
     else if(counter >5){
-      Swal.fire("Game Ended! <br> Your total score is:" + totalScore);
+      Swal.fire({
+        title: "Game Ended!",
+        text: "Your total score is: " + totalScore,
+        imageUrl: "./img/logo.png",
+        imageWidth: 300,
+        imageHeight: 100,
+        imageAlt: "Logo",
+        showCloseButton: true,
+        showCancelButton: true,
+        allowOutsideClick: false,
+        focusConfirm: false,
+        confirmButtonText: `<i class="fa-solid fa-house"></i> Home`,
+        cancelButtonText: `<i class="fa-solid fa-rotate-right"></i> Retry`,
+        confirmButtonAriaLabel: "Go Home",
+        cancelButtonAriaLabel: "Retry Game",
+        customClass: {
+          confirmButton: 'my-confirm-button',
+          cancelButton: 'my-cancel-button'
+        },
+        preConfirm: () => {
+          window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
+        },
+        didOpen: () => {
+          const cancelBtn = document.querySelector('.swal2-cancel');
+          cancelBtn.addEventListener('click', () => {
+            location.reload(); // Retry butonuna tıklanınca sayfayı yenile
+          });
+        }
+      });
+      
+      
     }
   }
 }
