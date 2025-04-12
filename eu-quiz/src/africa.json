@@ -1,0 +1,436 @@
+[
+    {
+        "id": "DZ",
+        "country": "Algeria",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/dz.svg",
+        "capital": "Algiers",
+        "currency": "Dinar (DZD)"
+    },
+
+    {
+        "id": "AO",
+        "country": "Angola",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ao.svg",
+        "capital": "Luanda",
+        "currency": "Kwanza (AOA)"
+    },
+
+    {
+        "id": "BJ",
+        "country": "Benin",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/bj.svg",
+        "capital": "Porto-Novo",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "BW",
+        "country": "Botswana",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/bw.svg",
+        "capital": "Gaborone",
+        "currency": "Pula (BWP)"
+    },
+
+    {
+        "id": "BF",
+        "country": "Burkina Faso",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/bf.svg",
+        "capital": "Ouagadougou",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "BI",
+        "country": "Burundi",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/bi.svg",
+        "capital": "Gitega",
+        "currency": "Franc (BIF)"
+    },
+
+    {
+        "id": "CV",
+        "country": "Cabo Verde",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/cv.svg",
+        "capital": "Praia",
+        "currency": "Escudo (CVE)"
+    },
+
+    {
+        "id": "CM",
+        "country": "Cameroon",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/cm.svg",
+        "capital": "Yaoundé",
+        "currency": "franc (XAF)"
+    },
+
+    {
+        "id": "CF",
+        "country": "Central African Republic",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/cf.svg",
+        "capital": "Bangui",
+        "currency": "franc (XAF)"
+    },
+
+    {
+        "id": "TD",
+        "country": "Chad",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/td.svg",
+        "capital": "N'Djamena",
+        "currency": "franc (XAF)"
+    },
+
+    {
+        "id": "KM",
+        "country": "Comoros",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/km.svg",
+        "capital": "Moroni",
+        "currency": "Franc (KMF)"
+    },
+
+    {
+        "id": "CG",
+        "country": "Congo",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/cg.svg",
+        "capital": "Brazzaville",
+        "currency": "franc (XAF)"
+    },
+
+    {
+        "id": "CD",
+        "country": "Democratic Republic of the Congo",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/cd.svg",
+        "capital": "Kinshasa",
+        "currency": "Franc (CDF)"
+    },
+
+    {
+        "id": "DJ",
+        "country": "Djibouti",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/dj.svg",
+        "capital": "Djibouti",
+        "currency": "Franc (DJF)"
+    },
+
+    {
+        "id": "EG",
+        "country": "Egypt",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/eg.svg",
+        "capital": "Cairo",
+        "currency": "Pound (EGP)"
+    },
+
+    {
+        "id": "GQ",
+        "country": "Equatorial Guinea",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/gq.svg",
+        "capital": "Malabo",
+        "currency": "franc (XAF)"
+    },
+
+    {
+        "id": "ER",
+        "country": "Eritrea",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/er.svg",
+        "capital": "Asmara",
+        "currency": "Nakfa (ERN)"
+    },
+
+    {
+        "id": "SZ",
+        "country": "Eswatini",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/sz.svg",
+        "capital": "Mbabane",
+        "currency": "Lilangeni (SZL)"
+    },
+
+    {
+        "id": "ET",
+        "country": "Ethiopia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/et.svg",
+        "capital": "Addis Ababa",
+        "currency": "Birr (ETB)"
+    },
+
+    {
+        "id": "GA",
+        "country": "Gabon",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ga.svg",
+        "capital": "Libreville",
+        "currency": "franc (XAF)"
+    },
+
+    {
+        "id": "GM",
+        "country": "Gambia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/gm.svg",
+        "capital": "Banjul",
+        "currency": "Dalasi (GMD)"
+    },
+
+    {
+        "id": "GH",
+        "country": "Ghana",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/gh.svg",
+        "capital": "Accra",
+        "currency": "Cedi (GHS)"
+    },
+
+    {
+        "id": "GN",
+        "country": "Guinea",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/gn.svg",
+        "capital": "Conakry",
+        "currency": "Franc (GNF)"
+    },
+
+    {
+        "id": "GW",
+        "country": "Guinea-Bissau",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/gw.svg",
+        "capital": "Bissau",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "CI",
+        "country": "Ivory Coast",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ci.svg",
+        "capital": "Yamoussoukro",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "KE",
+        "country": "Kenya",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ke.svg",
+        "capital": "Nairobi",
+        "currency": "Shilling (KES)"
+    },
+
+    {
+        "id": "LS",
+        "country": "Lesotho",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ls.svg",
+        "capital": "Maseru",
+        "currency": "Loti (LSL)"
+    },
+
+    {
+        "id": "LR",
+        "country": "Liberia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/lr.svg",
+        "capital": "Monrovia",
+        "currency": "Dollar (LRD)"
+    },
+
+    {
+        "id": "LY",
+        "country": "Libya",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ly.svg",
+        "capital": "Tripoli",
+        "currency": "Dinar (LYD)"
+    },
+
+    {
+        "id": "MG",
+        "country": "Madagascar",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/mg.svg",
+        "capital": "Antananarivo",
+        "currency": "Ariary (MGA)"
+    },
+
+    {
+        "id": "MW",
+        "country": "Malawi",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/mw.svg",
+        "capital": "Lilongwe",
+        "currency": "Kwacha (MWK)"
+    },
+
+    {
+        "id": "ML",
+        "country": "Mali",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ml.svg",
+        "capital": "Bamako",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "MR",
+        "country": "Mauritania",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/mr.svg",
+        "capital": "Nouakchott",
+        "currency": "Ouguiya (MRU)"
+    },
+
+    {
+        "id": "MU",
+        "country": "Mauritius",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/mu.svg",
+        "capital": "Port Louis",
+        "currency": "Rupee (MUR)"
+    },
+
+    {
+        "id": "MA",
+        "country": "Morocco",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ma.svg",
+        "capital": "Rabat",
+        "currency": "Dirham (MAD)"
+    },
+
+    {
+        "id": "MZ",
+        "country": "Mozambique",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/mz.svg",
+        "capital": "Maputo",
+        "currency": "Metical (MZN)"
+    },
+
+    {
+        "id": "NA",
+        "country": "Namibia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/na.svg",
+        "capital": "Windhoek",
+        "currency": "Dollar (NAD)"
+    },
+
+    {
+        "id": "NE",
+        "country": "Niger",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ne.svg",
+        "capital": "Niamey",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "NG",
+        "country": "Nigeria",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ng.svg",
+        "capital": "Abuja",
+        "currency": "Naira (NGN)"
+    },
+
+    {
+        "id": "RW",
+        "country": "Rwanda",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/rw.svg",
+        "capital": "Kigali",
+        "currency": "Franc (RWF)"
+    },
+
+    {
+        "id": "ST",
+        "country": "São Tomé and Príncipe",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/st.svg",
+        "capital": "São Tomé",
+        "currency": "Dobra (STN)"
+    },
+
+    {
+        "id": "SN",
+        "country": "Senegal",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/sn.svg",
+        "capital": "Dakar",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "SC",
+        "country": "Seychelles",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/sc.svg",
+        "capital": "Victoria",
+        "currency": "Rupee (SCR)"
+    },
+
+    {
+        "id": "SL",
+        "country": "Sierra Leone",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/sl.svg",
+        "capital": "Freetown",
+        "currency": "Leone (SLL)"
+    },
+
+    {
+        "id": "SO",
+        "country": "Somalia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/so.svg",
+        "capital": "Mogadishu",
+        "currency": "Shilling (SOS)"
+    },
+
+    {
+        "id": "ZA",
+        "country": "South Africa",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/za.svg",
+        "capital": "Pretoria, Bloemfontein, Cape Town",
+        "currency": "Rand (ZAR)"
+    },
+
+    {
+        "id": "SS",
+        "country": "South Sudan",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ss.svg",
+        "capital": "Juba",
+        "currency": "Pound (SSP)"
+    },
+
+    {
+        "id": "SD",
+        "country": "Sudan",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/sd.svg",
+        "capital": "Khartoum",
+        "currency": "Pound (SDG)"
+    },
+
+    {
+        "id": "TZ",
+        "country": "Tanzania",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/tz.svg",
+        "capital": "Dodoma",
+        "currency": "Shilling (TZS)"
+    },
+
+    {
+        "id": "TG",
+        "country": "Togo",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/tg.svg",
+        "capital": "Lomé",
+        "currency": "franc (XOF)"
+    },
+
+    {
+        "id": "TN",
+        "country": "Tunisia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/tn.svg",
+        "capital": "Tunis",
+        "currency": "Dinar (TND)"
+    },
+
+    {
+        "id": "UG",
+        "country": "Uganda",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/ug.svg",
+        "capital": "Kampala",
+        "currency": "Shilling (UGX)"
+    },
+
+    {
+        "id": "ZM",
+        "country": "Zambia",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/zm.svg",
+        "capital": "Lusaka",
+        "currency": "Kwacha (ZMW)"
+    },
+
+    {
+        "id": "ZW",
+        "country": "Zimbabwe",
+        "flag": "https://hatscripts.github.io/circle-flags/flags/zw.svg",
+        "capital": "Harare",
+        "currency": "Dollar (ZWL)"
+    },
+
+    
+
+]
