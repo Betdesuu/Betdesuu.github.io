@@ -16,7 +16,7 @@ function startgame() {
   });
   const stepSegment = document.getElementById(counter);
   stepSegment.classList.add('is-active');
-  fetch('./src/eu.json')
+  fetch('./src/africa.json')
     .then(Response => Response.json())
     .then(data => {
       countries = data;
@@ -155,7 +155,6 @@ function checkAnswer(selectedCountry, correctCountry) {
       src: ['./sounds/correct.mp3']
     });    
     sound.play();
-  
     checkicon.classList.add('fa-solid', 'fa-check');
     checkicon.style.color= '#ffffff';
     spanInsideLi.appendChild(checkicon);
