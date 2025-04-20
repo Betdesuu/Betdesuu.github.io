@@ -228,7 +228,7 @@ function checkAnswer(selectedCountry, correctCountry) {
             cancelButton: 'my-cancel-button'
           },
           preConfirm: () => {
-            window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
+            window.location.href = "index.html"; // Home butonuna tıklanınca yönlendir
           },
           didOpen: () => {
             if(totalScore>=previoustotalScore){
@@ -289,7 +289,7 @@ function checkAnswer(selectedCountry, correctCountry) {
           cancelButton: 'my-cancel-button'
         },
         preConfirm: () => {
-          window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
+          window.location.href = "index.html"; // Home butonuna tıklanınca yönlendir
         },
         didOpen: () => {
           if(totalScore>=previoustotalScore){
