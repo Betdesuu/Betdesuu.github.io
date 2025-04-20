@@ -4,7 +4,7 @@ let correctCountry = null;
 let questionScore = 20;
 let counter = 1;
 let previousCountryId = null;
-let previoustotalScore = 0;
+previoustotalScore=0;
 let askedCountries = []; // Daha önce sorulan ülkelerin ID'lerini tutacak dizi
 
 startgame();
@@ -17,7 +17,7 @@ function startgame() {
   });
   const stepSegment = document.getElementById(counter);
   stepSegment.classList.add('is-active');
-  fetch('./src/eu.json')
+  fetch('./src/asia.json')
     .then(Response => Response.json())
     .then(data => {
       countries = data;
@@ -232,7 +232,7 @@ function checkAnswer(selectedCountry, correctCountry) {
           },
           didOpen: () => {
             if(totalScore>=previoustotalScore){
-              localStorage.setItem("EUrecord",totalScore)
+              localStorage.setItem("ASIArecord",totalScore)
             }
             previoustotalScore=totalScore;
             const cancelBtn = document.querySelector('.swal2-cancel');
@@ -293,10 +293,9 @@ function checkAnswer(selectedCountry, correctCountry) {
         },
         didOpen: () => {
           if(totalScore>=previoustotalScore){
-              localStorage.setItem("EUrecord",totalScore)
-            }
-            previoustotalScore=totalScore;
-
+            localStorage.setItem("ASIArecord",totalScore)
+          }
+          previoustotalScore=totalScore;
           const cancelBtn = document.querySelector('.swal2-cancel');
           cancelBtn.addEventListener('click', () => {
             location.reload(); // Retry butonuna tıklanınca sayfayı yenile
