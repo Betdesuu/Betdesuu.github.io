@@ -4,6 +4,7 @@ let correctCountry = null;
 let questionScore = 20;
 let counter = 1;
 let previousCountryId = null;
+let previoustotalScore = 0;
 let askedCountries = []; // Daha önce sorulan ülkelerin ID'lerini tutacak dizi
 
 startgame();
@@ -230,6 +231,10 @@ function checkAnswer(selectedCountry, correctCountry) {
             window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
           },
           didOpen: () => {
+            if(totalScore>=previoustotalScore){
+              localStorage.setItem("EUrecord",totalScore)
+            }
+            previoustotalScore=totalScore;
             const cancelBtn = document.querySelector('.swal2-cancel');
             cancelBtn.addEventListener('click', () => {
               location.reload(); // Retry butonuna tıklanınca sayfayı yenile
@@ -287,6 +292,11 @@ function checkAnswer(selectedCountry, correctCountry) {
           window.location.href = "home.html"; // Home butonuna tıklanınca yönlendir
         },
         didOpen: () => {
+          if(totalScore>=previoustotalScore){
+              localStorage.setItem("EUrecord",totalScore)
+            }
+            previoustotalScore=totalScore;
+
           const cancelBtn = document.querySelector('.swal2-cancel');
           cancelBtn.addEventListener('click', () => {
             location.reload(); // Retry butonuna tıklanınca sayfayı yenile
