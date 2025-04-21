@@ -1,0 +1,107 @@
+[
+  {
+    "id": "CA",
+    "country": "Canada",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/ca.svg",
+    "capital": "Ottawa",
+    "currency": "Canadian Dollar (CAD)"
+  },
+  {
+    "id": "US",
+    "country": "United States",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/us.svg",
+    "capital": "Washington, D.C.",
+    "currency": "United States Dollar (USD)"
+  },
+  {
+    "id": "MX",
+    "country": "Mexico",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/mx.svg",
+    "capital": "Mexico City",
+    "currency": "Mexican Peso (MXN)"
+  },
+  {
+    "id": "GT",
+    "country": "Guatemala",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/gt.svg",
+    "capital": "Guatemala City",
+    "currency": "Quetzal (GTQ)"
+  },
+  {
+    "id": "BZ",
+    "country": "Belize",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/bz.svg",
+    "capital": "Belmopan",
+    "currency": "Belize Dollar (BZD)"
+  },
+  {
+    "id": "SV",
+    "country": "El Salvador",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/sv.svg",
+    "capital": "San Salvador",
+    "currency": "United States Dollar (USD)"
+  },
+  {
+    "id": "HN",
+    "country": "Honduras",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/hn.svg",
+    "capital": "Tegucigalpa",
+    "currency": "Lempira (HNL)"
+  },
+  {
+    "id": "NI",
+    "country": "Nicaragua",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/ni.svg",
+    "capital": "Managua",
+    "currency": "Córdoba (NIO)"
+  },
+  {
+    "id": "CR",
+    "country": "Costa Rica",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/cr.svg",
+    "capital": "San José",
+    "currency": "Costa Rican Colón (CRC)"
+  },
+  {
+    "id": "PA",
+    "country": "Panama",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/pa.svg",
+    "capital": "Panama City",
+    "currency": "Balboa (PAB), United States Dollar (USD)"
+  },
+  {
+    "id": "CU",
+    "country": "Cuba",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/cu.svg",
+    "capital": "Havana",
+    "currency": "Cuban Peso (CUP)"
+  },
+  {
+    "id": "HT",
+    "country": "Haiti",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/ht.svg",
+    "capital": "Port-au-Prince",
+    "currency": "Gourde (HTG)"
+  },
+  {
+    "id": "DO",
+    "country": "Dominican Republic",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/do.svg",
+    "capital": "Santo Domingo",
+    "currency": "Dominican Peso (DOP)"
+  },
+  {
+    "id": "JM",
+    "country": "Jamaica",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/jm.svg",
+    "capital": "Kingston",
+    "currency": "Jamaican Dollar (JMD)"
+  },
+  {
+    "id": "TT",
+    "country": "Trinidad and Tobago",
+    "flag": "https://hatscripts.github.io/circle-flags/flags/tt.svg",
+    "capital": "Port of Spain",
+    "currency": "Trinidad and Tobago Dollar (TTD)"
+  }
+]

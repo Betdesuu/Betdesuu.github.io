@@ -1,0 +1,93 @@
+[
+  {
+      "id": "AR",
+      "country": "Argentina",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/ar.svg",
+      "capital": "Buenos Aires",
+      "currency": "Argentine Peso (ARS)"
+  },
+  {
+      "id": "BO",
+      "country": "Bolivia",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/bo.svg",
+      "capital": "Sucre",
+      "currency": "Boliviano (BOB)"
+  },
+  {
+      "id": "BR",
+      "country": "Brazil",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/br.svg",
+      "capital": "Brasília",
+      "currency": "Real (BRL)"
+  },
+  {
+      "id": "CL",
+      "country": "Chile",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/cl.svg",
+      "capital": "Santiago",
+      "currency": "Chilean Peso (CLP)"
+  },
+  {
+      "id": "CO",
+      "country": "Colombia",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/co.svg",
+      "capital": "Bogotá",
+      "currency": "Colombian Peso (COP)"
+  },
+  {
+      "id": "EC",
+      "country": "Ecuador",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/ec.svg",
+      "capital": "Quito",
+      "currency": "United States Dollar (USD)"
+  },
+  {
+      "id": "GY",
+      "country": "Guyana",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/gy.svg",
+      "capital": "Georgetown",
+      "currency": "Guyanese Dollar (GYD)"
+  },
+  {
+      "id": "PY",
+      "country": "Paraguay",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/py.svg",
+      "capital": "Asunción",
+      "currency": "Guarani (PYG)"
+  },
+  {
+      "id": "PE",
+      "country": "Peru",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/pe.svg",
+      "capital": "Lima",
+      "currency": "Sol (PEN)"
+  },
+  {
+      "id": "SR",
+      "country": "Suriname",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/sr.svg",
+      "capital": "Paramaribo",
+      "currency": "Surinamese Dollar (SRD)"
+  },
+  {
+      "id": "UY",
+      "country": "Uruguay",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/uy.svg",
+      "capital": "Montevideo",
+      "currency": "Uruguayan Peso (UYU)"
+  },
+  {
+      "id": "VE",
+      "country": "Venezuela",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/ve.svg",
+      "capital": "Caracas",
+      "currency": "Bolívar (VES)"
+  },
+  {
+      "id": "GF",
+      "country": "French Guiana",
+      "flag": "https://hatscripts.github.io/circle-flags/flags/fr.svg",
+      "capital": "Cayenne",
+      "currency": "Euro (EUR)"
+  }
+]
