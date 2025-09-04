@@ -171,7 +171,7 @@ function checkAnswer(selectedCountry, correctCountry) {
     totalScore += questionScore;
 
     let currentDisplayScore = previousScore;
-    const animationSpeed = 50; // ms
+    const animationSpeed = 15; // ms
     const increment = 1;
     let scorediv = document.getElementById("totalScore");
     scorediv.innerHTML = totalScore + " p";
