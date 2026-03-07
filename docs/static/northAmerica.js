@@ -32,7 +32,7 @@ function startgame() {
       askedCountries.push(randomCountry.id);
 
       correctCountry = randomCountry;
-      console.log(randomCountry);
+      // console.log(randomCountry);
       dom(randomCountry.id);
       resetHintListeners(); // Eski event listener'ları kaldır
       hint(randomCountry); // Yeni event listener'ları ekle
@@ -172,7 +172,7 @@ function checkAnswer(selectedCountry, correctCountry) {
     totalScore += questionScore;
 
     let currentDisplayScore = previousScore;
-    const animationSpeed = 15; // ms
+    const animationSpeed = 25; // ms
     const increment = 1;
     let scorediv = document.getElementById("totalScore");
     scorediv.innerHTML = totalScore + " p";

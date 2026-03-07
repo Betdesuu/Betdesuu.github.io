@@ -5,9 +5,335 @@ let questionScore = 20;
 let counter = 1;
 let previousCountryId = null;
 let previoustotalScore = 0;
-let askedCountries = []; // Daha önce sorulan ülkelerin ID'lerini tutacak dizi
+let askedCountries = []; // Daha önce sorulan ülkelerin idleri tutacak dizim
+const nickname = document.getElementById("nickname");
 
+
+displayHighScore();
+gameDescription();
 startgame();
+
+function displayHighScore() {
+  const highScoreElement = document.getElementById("highScore");
+  if (!highScoreElement) return;
+  
+  let maxScore = 0;
+  
+  // Tüm bölgelerin scorlarını kontrol et
+  const regions = ['EUrecord', 'ASIArecord', 'AFRICArecord', 'NorthAmericarecord', 'SouthAmericarecord', 'WORLDrecord'];
+  
+  regions.forEach(region => {
+    const score = localStorage.getItem(region);
+    if (score && parseInt(score) > maxScore) {
+      maxScore = parseInt(score);
+    }
+  });
+  
+  
+  if (maxScore > 0) {
+    highScoreElement.innerText = maxScore + ' p';
+  }
+}
+
+function gameDescription(){
+ 
+  const europe = document.getElementById("europe");
+  const asia = document.getElementById("asia");
+  const africa = document.getElementById("africa");
+  const northAmerica = document.getElementById("northAmerica");
+  const southAmerica = document.getElementById("southAmerica");
+  const world = document.getElementById("world");
+
+  // Avrupa için
+  if (europe) {
+    europe.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(nickname.value != null){
+        Swal.fire({
+        title: `Hi ${nickname.value} here are the rules`,
+        html: `
+          <p style="text-align:left;"> Each question has 20 points. You should try to guess the country colored in yellow.</p>
+          <p style="text-align:left;"> If you don't know the name of the country you can take hints</p>
+          <div style="text-align:left;margin-top:1.5rem;">
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/flag.svg" alt="flag" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Flag Hint</strong><br>
+                <span>Shows the country's flag</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-7 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/cash.svg" alt="currency" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Currency Hint</strong><br>
+                <span>Shows the country's currency</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-3 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/capital.svg" alt="capital" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Capital Hint</strong><br>
+                <span>Shows the country's capital</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-5 points</span>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: "info",
+        confirmButtonText: "Start Game"
+      }).then(() => {
+        window.location.href = "eu.html";
+      });
+      }
+    
+    });
+  }
+
+  if (asia) {
+    asia.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(nickname.value != null){
+        Swal.fire({
+        title: `Hi ${nickname.value} here are the rules`,
+        html: `
+          <p style="text-align:left;"> Each question has 20 points. You should try to guess the country colored in yellow.</p>
+          <p style="text-align:left;"> If you don't know the name of the country you can take hints</p>
+          <div style="text-align:left;margin-top:1.5rem;">
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/flag.svg" alt="flag" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Flag Hint</strong><br>
+                <span>Shows the country's flag</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-7 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/cash.svg" alt="currency" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Currency Hint</strong><br>
+                <span>Shows the country's currency</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-3 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/capital.svg" alt="capital" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Capital Hint</strong><br>
+                <span>Shows the country's capital</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-5 points</span>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: "info",
+        confirmButtonText: "Start Game"
+      }).then(() => {
+        window.location.href = "asia.html";
+      });
+      }
+    });
+  }
+
+  if (africa) {
+    africa.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(nickname.value != null){
+        Swal.fire({
+        title: `Hi ${nickname.value} here are the rules`,
+        html: `
+          <p style="text-align:left;"> Each question has 20 points. You should try to guess the country colored in yellow.</p>
+          <p style="text-align:left;"> If you don't know the name of the country you can take hints</p>
+          <div style="text-align:left;margin-top:1.5rem;">
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/flag.svg" alt="flag" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Flag Hint</strong><br>
+                <span>Shows the country's flag</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-7 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/cash.svg" alt="currency" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Currency Hint</strong><br>
+                <span>Shows the country's currency</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-3 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/capital.svg" alt="capital" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Capital Hint</strong><br>
+                <span>Shows the country's capital</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-5 points</span>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: "info",
+        confirmButtonText: "Start Game"
+      }).then(() => {
+        window.location.href = "africa.html";
+      });
+      }
+    });
+  }
+
+  if (northAmerica) {
+    northAmerica.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(nickname.value != null){
+        Swal.fire({
+        title: `Hi ${nickname.value} here are the rules`,
+        html: `
+          <p style="text-align:left;"> Each question has 20 points. You should try to guess the country colored in yellow.</p>
+          <p style="text-align:left;"> If you don't know the name of the country you can take hints</p>
+          <div style="text-align:left;margin-top:1.5rem;">
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/flag.svg" alt="flag" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Flag Hint</strong><br>
+                <span>Shows the country's flag</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-7 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/cash.svg" alt="currency" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Currency Hint</strong><br>
+                <span>Shows the country's currency</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-3 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/capital.svg" alt="capital" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Capital Hint</strong><br>
+                <span>Shows the country's capital</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-5 points</span>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: "info",
+        confirmButtonText: "Start Game"
+      }).then(() => {
+        window.location.href = "northAmerica.html";
+      });
+      }
+    });
+  }
+  if (southAmerica) {
+    southAmerica.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(nickname.value != null){
+        Swal.fire({
+        title: `Hi ${nickname.value} here are the rules`,
+        html: `
+          <p style="text-align:left;"> Each question has 20 points. You should try to guess the country colored in yellow.</p>
+          <p style="text-align:left;"> If you don't know the name of the country you can take hints</p>
+          <div style="text-align:left;margin-top:1.5rem;">
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/flag.svg" alt="flag" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Flag Hint</strong><br>
+                <span>Shows the country's flag</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-7 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/cash.svg" alt="currency" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Currency Hint</strong><br>
+                <span>Shows the country's currency</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-3 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/capital.svg" alt="capital" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Capital Hint</strong><br>
+                <span>Shows the country's capital</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-5 points</span>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: "info",
+        confirmButtonText: "Start Game"
+      }).then(() => {
+        window.location.href = "southAmerica.html";
+      });
+      }
+    });
+  }
+  if (world) {
+    world.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(nickname.value != null){
+        Swal.fire({
+        title: `Hi ${nickname.value} here are the rules`,
+        html: `
+          <p style="text-align:left;"> Each question has 20 points. You should try to guess the country colored in yellow.</p>
+          <p style="text-align:left;"> If you don't know the name of the country you can take hints</p>
+          <div style="text-align:left;margin-top:1.5rem;">
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/flag.svg" alt="flag" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Flag Hint</strong><br>
+                <span>Shows the country's flag</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-7 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;margin-bottom:1.5rem;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/cash.svg" alt="currency" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Currency Hint</strong><br>
+                <span>Shows the country's currency</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-3 points</span>
+              </div>
+            </div>
+            
+            <div style="display:flex;align-items:center;padding:0.5rem;border:1px solid #ddd;border-radius:5px;">
+              <img src="./img/capital.svg" alt="capital" style="max-width:50px;min-width:50px;margin-right:1rem;">
+              <div>
+                <strong>Capital Hint</strong><br>
+                <span>Shows the country's capital</span><br>
+                <span style="color:#ff6b6b;font-weight:bold;">-5 points</span>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: "info",
+        confirmButtonText: "Start Game"
+      }).then(() => {
+        window.location.href = "world.html";
+      });
+      }
+    });
+  }
+
+}
+
 function startgame() {
   questionScore = 20; // Question score sıfırlanıyor
   document.getElementById("questionscore").innerText = `${questionScore}p`;
@@ -32,7 +358,7 @@ function startgame() {
       askedCountries.push(randomCountry.id);
 
       correctCountry = randomCountry;
-      console.log(randomCountry);
+      // console.log(randomCountry);
       dom(randomCountry.id);
       resetHintListeners(); // Eski event listener'ları kaldır
       hint(randomCountry); // Yeni event listener'ları ekle
@@ -172,7 +498,7 @@ function checkAnswer(selectedCountry, correctCountry) {
     totalScore += questionScore;
 
     let currentDisplayScore = previousScore;
-    const animationSpeed = 15; // ms
+    const animationSpeed = 25; // ms
     const increment = 1;
     let scorediv = document.getElementById("totalScore");
     scorediv.innerHTML = totalScore + " p";
